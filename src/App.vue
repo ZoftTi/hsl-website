@@ -31,7 +31,6 @@ export default defineComponent({
     const toggleCarouselShow = () => {
       carouselShow.value = !carouselShow.value
     }
-    
     provide('carouselShow', carouselShow)
     provide('toggleCarouselShow', toggleCarouselShow)
 
