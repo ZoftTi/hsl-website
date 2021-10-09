@@ -1,30 +1,62 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="container-wrap">
+    <el-container>
+      <el-header>
+        <nav-bar />
+      </el-header>
+      <Carousel />
+      <el-main>
+        <router-view></router-view>
+      </el-main>
+
+      <Footer />
+    </el-container>
   </div>
-  <router-view/>
 </template>
 
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+import NavBar from "@/components/common/NavBar.vue"
+import Footer from "@/components/common/Footer.vue"
+import Carousel from "@/components/common/Carousel.vue"
+import { provide, inject, defineComponent, ref } from "vue"
+export default defineComponent({
+  name: "App",
+  components: {
+    NavBar,
+    Carousel,
+    Footer,
+  },
+  setup() {
+    const carouselShow = ref(true)
+    const toggleCarouselShow = () => {
+      carouselShow.value = !carouselShow.value
     }
+    
+    provide('carouselShow', carouselShow)
+    provide('toggleCarouselShow', toggleCarouselShow)
+
+    return {}
+  },
+})
+</script>
+
+<style lang="less" scoped>
+.container-wrap {
+  .el-container {
+    padding: 0;
+  }
+
+  .el-main {
+    padding: 0;
+  }
+
+  .el-header {
+    padding: 0;
+    height: auto;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    background-color: white;
   }
 }
 </style>
