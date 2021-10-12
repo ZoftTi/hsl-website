@@ -182,7 +182,7 @@ export default defineComponent({
     .post {
       .el-row {
         width: 100%;
-        
+
         .el-col:nth-child(1) {
           margin-bottom: 40px;
         }
@@ -192,6 +192,12 @@ export default defineComponent({
 
   @media screen and (min-width: 768px) {
     width: calc(100% - 35px);
+
+    .post .el-row {
+      .el-col:nth-child(1) {
+        margin-bottom: 40px;
+      }
+    }
   }
 
   @media screen and (min-width: 1200px) {

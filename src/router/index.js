@@ -53,7 +53,18 @@ const routes = [
     path: '/:category/article/:id',
     name: 'Article',
     component: () => import('../views/Article.vue')
+  },
+
+  // 404 Not Found
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: () => import('@/views/NotFound.vue'),
+    meta: {
+      title: '404 Not Found'
+    }
   }
+
 ]
 
 const router = createRouter({

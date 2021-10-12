@@ -46,25 +46,27 @@
               <h2>新闻资讯</h2>
               <div class="line-div"></div>
               <el-row :gutter="30">
-                <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+                <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12">
                   <img
                     src="https://xibaiimg.gz.bcebos.com/hongshulinjy/5e706f7451bbe9.17343751.jpg"
                     alt=""
                   />
-                  <span>职场人际交往技巧一</span>
+                  <p>职场人际交往技巧一</p>
+                  <span>2021-10-7</span>
                 </el-col>
-                <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+                <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12">
                   <img
                     src="https://xibaiimg.gz.bcebos.com/hongshulinjy/5e706f7451bbe9.17343751.jpg"
                     alt=""
                   />
-                  <span>职场人际交往技巧一</span>
+                  <p>职场人际交往技巧一</p>
+                  <span>2021-10-7</span>
                 </el-col>
               </el-row>
               <span class="more">更多</span>
             </div>
           </el-col>
-          <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="16">
+          <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="16">
             <div class="dynamic">
               <h2>行业动态</h2>
               <div class="line-div"></div>
@@ -90,8 +92,7 @@
 import { defineComponent, reactive } from "vue"
 export default defineComponent({
   name: "App",
-  components: {
-  },
+  components: {},
   setup() {
     const aboutData = reactive([
       { title: "合作职业院校", data: 10, unit: "余所" },
@@ -287,6 +288,22 @@ export default defineComponent({
 
     @media screen and (max-width: 768px) {
       padding: 50px 0px;
+      .information {
+        border: none;
+        padding-right: 0;
+      }
+
+      .information .el-col, .dynamic .el-col {
+        margin-bottom: 20px;
+        background-color: #f2f2f2;
+        padding: 20px 0px;
+        img {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    @media screen and (min-width: 768px) {
       .information {
         border: none;
         padding-right: 0;

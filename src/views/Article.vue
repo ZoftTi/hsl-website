@@ -1,5 +1,5 @@
 <template>
-  <div class="news-detail">
+  <div class="article">
     <el-row>
       <el-col :xs="24" :sm="24" :md="17" :lg="17" :xl="17">
         <h2>大中专院校应届毕业生求职攻略 | 聘歌第一届校园就业大使专题培训</h2>
@@ -137,7 +137,7 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
-.news-detail {
+.article {
   max-width: 1200px;
   width: 100%;
   margin: 60px auto 0;

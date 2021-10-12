@@ -95,10 +95,12 @@ export default defineComponent({
     .el-row {
       width: 100%;
       max-width: 1200px;
-      margin-bottom: 80px;
+      margin-bottom: 60px;
 
       .el-col {
         min-height: 200px;
+        background-color: #f2f2f2;
+        cursor: pointer;
 
         img {
           width: 100%;
@@ -129,7 +131,8 @@ export default defineComponent({
     .post {
       .el-row {
         .el-col:nth-child(2) {
-          padding: 20px 0px;
+          padding: 20px 10px;
+
           span {
             position: relative;
             bottom: -20px;
