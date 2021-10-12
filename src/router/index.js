@@ -50,9 +50,9 @@ const routes = [
     component: () => import('../views/Cooperation/Enterprise.vue')
   },
   {
-    path: '/newsdetail',
-    name: 'NewsDetail',
-    component: () => import('../views/News/NewsDetail.vue')
+    path: '/:category/article/:id',
+    name: 'Article',
+    component: () => import('../views/Article.vue')
   }
 ]
 

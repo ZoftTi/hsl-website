@@ -53,11 +53,7 @@ export default defineComponent({
         ],
       },
       { title: "行业动态", path: "/dynamic", children: [] },
-      {
-        title: "新闻",
-        path: "/news",
-        children: [{ title: "新闻详情", path: "/newsdetail" }],
-      },
+      { title: "新闻", path: "/news", children: [] },
     ])
 
     // 移动端导航是否显示
@@ -74,20 +70,31 @@ export default defineComponent({
       router.push(path)
     }
 
+    const checkLocalStatus = ref(true)
+
     const checkRouterLocal = (path) => {
       // 查找当前路由下标高亮
       const findNavIndex = nav.findIndex((item) => item.path === path)
+      const findChildrenNavIndex = nav.findIndex(
+        (item) => item.children.findIndex((item) => item.path === path) !== -1
+      )
 
       if (findNavIndex !== -1) {
-        navIndex.value = findNavIndex
+        return findNavIndex
+      } else if (findChildrenNavIndex !== -1) {
+        return findChildrenNavIndex
       } else {
-        navIndex.value = nav.findIndex((item) => item.children.findIndex((item) => item.path === path) !== -1)
+        if (checkLocalStatus.value) {
+          let fullPath = "/" + path.split("/")[1]
+          checkLocalStatus.value = !checkLocalStatus.value
+          return checkRouterLocal(fullPath)
+        }
       }
     }
 
     // 路由守卫查询路由状态
     router.afterEach((to, from) => {
-      checkRouterLocal(to.fullPath)
+      navIndex.value = checkRouterLocal(to.fullPath)
     })
 
     return { isShow, nav, navIndex, routerLink }

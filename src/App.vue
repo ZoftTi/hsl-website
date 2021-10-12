@@ -6,7 +6,11 @@
       </el-header>
       <Carousel />
       <el-main>
-        <router-view></router-view>
+        <router-view v-slot="{ Component }">
+          <transition name="fade" mode="out-in" enter-from-class="fade-enter-from">
+            <component :is="Component" />
+          </transition>
+        </router-view>
       </el-main>
 
       <Footer />
@@ -31,8 +35,8 @@ export default defineComponent({
     const toggleCarouselShow = () => {
       carouselShow.value = !carouselShow.value
     }
-    provide('carouselShow', carouselShow)
-    provide('toggleCarouselShow', toggleCarouselShow)
+    provide("carouselShow", carouselShow)
+    provide("toggleCarouselShow", toggleCarouselShow)
 
     return {}
   },
@@ -40,6 +44,16 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
 .container-wrap {
   .el-container {
     padding: 0;
