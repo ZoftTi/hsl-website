@@ -63,7 +63,7 @@
                   <span>2021-10-7</span>
                 </el-col>
               </el-row>
-              <span class="more">更多</span>
+              <router-link to="/news" class="more">更多</router-link>
             </div>
           </el-col>
           <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="16">
@@ -79,7 +79,7 @@
                   <span>职场人际交往技巧一</span>
                 </el-col>
               </el-row>
-              <span class="more">更多</span>
+              <router-link to="/dynamic" class="more">更多</router-link>
             </div>
           </el-col>
         </el-row>

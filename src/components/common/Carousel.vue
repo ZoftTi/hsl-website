@@ -1,6 +1,6 @@
 <template>
   <div class="carousel-wrap" v-if="carouselShow">
-    <el-carousel trigger="click" height="600px">
+    <el-carousel trigger="click" height="550px">
       <el-carousel-item v-for="item in images" :key="item">
         <img :src="item" alt="" />
       </el-carousel-item>
