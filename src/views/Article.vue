@@ -2,7 +2,9 @@
   <div class="article">
     <el-row>
       <el-col :xs="24" :sm="24" :md="17" :lg="17" :xl="17">
-        <h2 class="title">大中专院校应届毕业生求职攻略 | 聘歌第一届校园就业大使专题培训</h2>
+        <h2 class="title">
+          大中专院校应届毕业生求职攻略 | 聘歌第一届校园就业大使专题培训
+        </h2>
         <span>2021-05-10 - 广州红树林教育科技有限公司</span>
         <div class="line-div"></div>
         <div class="content">
@@ -98,13 +100,61 @@
         class="recommend-wrap"
       >
         <div class="header">
-          <span>广州红树林教育科技有限公司</span>
+          <span>推荐阅读</span>
         </div>
         <div class="recommend">
           <el-row class="recommend-item">
             <el-col :span="8">
               <img
                 src="https://xibaiimg.gz.bcebos.com/hongshulinjy/5e706f7451bbe9.17343751.jpg"
+                alt=""
+              />
+            </el-col>
+            <el-col :span="16">
+              <h4>职场人际交往技巧一</h4>
+              <span>2020-03-13</span>
+            </el-col>
+          </el-row>
+          <el-row class="recommend-item">
+            <el-col :span="8">
+              <img
+                src="https://xibaiimg.gz.bcebos.com/hongshulinjy/5e706f2e151c05.12412608.jpg"
+                alt=""
+              />
+            </el-col>
+            <el-col :span="16">
+              <h4>职场人际交往技巧一</h4>
+              <span>2020-03-13</span>
+            </el-col>
+          </el-row>
+          <el-row class="recommend-item">
+            <el-col :span="8">
+              <img
+                src="https://xibaiimg.gz.bcebos.com/hongshulinjy/1584415732759876.png"
+                alt=""
+              />
+            </el-col>
+            <el-col :span="16">
+              <h4>职场人际交往技巧一</h4>
+              <span>2020-03-13</span>
+            </el-col>
+          </el-row>
+          <el-row class="recommend-item">
+            <el-col :span="8">
+              <img
+                src="https://xibaiimg.gz.bcebos.com/hongshulinjy/5e71e704d29cb1.62033044.jpg"
+                alt=""
+              />
+            </el-col>
+            <el-col :span="16">
+              <h4>职场人际交往技巧一</h4>
+              <span>2020-03-13</span>
+            </el-col>
+          </el-row>
+          <el-row class="recommend-item">
+            <el-col :span="8">
+              <img
+                src="https://xibaiimg.gz.bcebos.com/hongshulinjy/5e71e72e2b07d6.87738941.jpg"
                 alt=""
               />
             </el-col>
@@ -187,20 +237,18 @@ export default defineComponent({
 
     .el-col:nth-child(2) {
       .header {
-        img {
-          width: 60%;
-          margin-bottom: 30px;
-        }
-
         span {
-          margin-bottom: 20px;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 2rem;
         }
-        display: flex;
-        flex-direction: column;
-        align-items: center;
       }
       .recommend {
         padding: 10px 0px;
+
+        .recommend-item {
+          margin-bottom: 20px;
+        }
 
         img {
           width: 100%;
@@ -229,8 +277,9 @@ export default defineComponent({
   @media screen and (max-width: 768px) {
     width: calc(100% - 32px);
 
-    .footer , .right{
-      text-align: center!important;
+    .footer,
+    .right {
+      text-align: center !important;
     }
 
     .left {
