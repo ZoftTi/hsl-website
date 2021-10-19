@@ -339,7 +339,7 @@ export default defineComponent({
       .content {
         cursor: pointer;
         padding: 16px;
-        background: #f8f8f8;
+        background: #f4f4f4;
 
         h1 {
           line-height: 2rem;
