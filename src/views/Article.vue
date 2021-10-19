@@ -2,7 +2,7 @@
   <div class="article">
     <el-row>
       <el-col :xs="24" :sm="24" :md="17" :lg="17" :xl="17">
-        <h2>大中专院校应届毕业生求职攻略 | 聘歌第一届校园就业大使专题培训</h2>
+        <h2 class="title">大中专院校应届毕业生求职攻略 | 聘歌第一届校园就业大使专题培训</h2>
         <span>2021-05-10 - 广州红树林教育科技有限公司</span>
         <div class="line-div"></div>
         <div class="content">
@@ -98,7 +98,6 @@
         class="recommend-wrap"
       >
         <div class="header">
-          <img src="@/assets/images/home-logo.jpg" alt="" />
           <span>广州红树林教育科技有限公司</span>
         </div>
         <div class="recommend">
@@ -146,7 +145,7 @@ export default defineComponent({
 
   .line-div {
     width: 100%;
-    height: 2px;
+    height: 4px;
 
     margin: 16px 0px 20px;
     background-color: #3c8ee2;
@@ -161,6 +160,7 @@ export default defineComponent({
 
       span {
         font-size: 16px;
+        line-height: 2rem;
       }
 
       img {
@@ -207,12 +207,18 @@ export default defineComponent({
           height: 100%;
           object-fit: cover;
           margin: 0;
+          border-radius: 2px;
         }
 
         .el-col:nth-child(2) {
           h4 {
             font-size: 16px;
-            margin-bottom: 10px;
+            font-weight: normal;
+            margin-bottom: 5px;
+          }
+
+          span {
+            font-size: 14px;
           }
 
           padding: 5px 10px;

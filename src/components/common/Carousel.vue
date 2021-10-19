@@ -11,13 +11,16 @@
 <script>
 import { defineComponent, inject, reactive } from "vue"
 import { useRoute, useRouter, RouteLocationRaw } from "vue-router"
+import bannerImg from "@/assets/images/banner/banner1.png"
+import bannerImgTwo from "@/assets/images/banner/banner2.png"
+import bannerImgThree from "@/assets/images/banner/banner3.png"
 export default defineComponent({
   name: "App",
   setup() {
     const images = reactive([
-      "https://xibaiimg.gz.bcebos.com/hongshulinjy/5f6afc1e744878.14061921.jpg",
-      "https://xibaiimg.gz.bcebos.com/hongshulinjy/5f6afc1e6eaa36.75172028.jpg",
-      "https://xibaiimg.gz.bcebos.com/hongshulinjy/5f6871ca7d5b28.29320831.jpg",
+      bannerImg,
+      bannerImgTwo,
+      bannerImgThree,
     ])
 
     const carouselShow = inject("carouselShow")

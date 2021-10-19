@@ -7,7 +7,11 @@
       <Carousel />
       <el-main>
         <router-view v-slot="{ Component }">
-          <transition name="fade" mode="out-in" enter-from-class="fade-enter-from">
+          <transition
+            name="fade"
+            mode="out-in"
+            enter-from-class="fade-enter-from"
+          >
             <component :is="Component" />
           </transition>
         </router-view>
@@ -70,6 +74,7 @@ export default defineComponent({
     z-index: 999;
     width: 100%;
     background-color: white;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
   }
 }
 </style>

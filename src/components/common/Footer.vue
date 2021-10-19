@@ -41,40 +41,63 @@ export default defineComponent({
     width: 100%;
     color: #f2f2f2;
     background-color: #333333;
-    padding: 40px 0 20px;
+    padding: 60px 0px 40px;
 
     .el-row {
-      width: var(--client-width);
+      width: calc(100% - 60px);
+      max-width: 1200px;
       margin: 0 auto;
 
-      .el-col {
-        h2,
-        h4 {
-          margin-bottom: 48px;
-        }
+      .el-col h2,
+      .el-col h4 {
+        margin-bottom: 48px;
       }
 
       .or-img {
         display: flex;
         justify-content: flex-end;
-
-        @media screen and (max-width: 768px) {
-          justify-content: center;
-        }
-
-        img {
-          width: 236px;
-          height: 236px;
-        }
       }
     }
 
     .copyright {
-      margin-top: 40px;
       width: 100%;
       height: 40px;
       text-align: center;
       padding: 0px 10px;
+      margin: 40px auto 0;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .footer .el-row,
+    .footer .copyright {
+      width: calc(100% - 64px);
+
+      font-size: 14px;
+    }
+
+    .footer .el-row .or-img {
+      width: 100%;
+      display: block;
+      img {
+        width: 100%;
+      }
+    }
+
+    .footer .copyright {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .footer .el-row {
+      width: calc(100% - 100px);
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .footer .el-row {
+      width: calc(100% - 70px);
     }
   }
 }

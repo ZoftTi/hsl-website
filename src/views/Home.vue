@@ -40,47 +40,78 @@
         </el-row>
       </div>
       <div class="news">
-        <el-row :gutter="40">
-          <el-col :xs="24" :sm="24" :md="16" :lg="16" :xl="16">
-            <div class="information">
-              <h2>新闻资讯</h2>
-              <div class="line-div"></div>
-              <el-row :gutter="30">
-                <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12">
-                  <img
-                    src="https://xibaiimg.gz.bcebos.com/hongshulinjy/5e706f7451bbe9.17343751.jpg"
-                    alt=""
-                  />
-                  <p>职场人际交往技巧一</p>
-                  <span>2021-10-7</span>
-                </el-col>
-                <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12">
-                  <img
-                    src="https://xibaiimg.gz.bcebos.com/hongshulinjy/5e706f7451bbe9.17343751.jpg"
-                    alt=""
-                  />
-                  <p>职场人际交往技巧一</p>
-                  <span>2021-10-7</span>
-                </el-col>
-              </el-row>
-              <router-link to="/news" class="more">更多</router-link>
+        <el-row class="news-list-box" :gutter="30">
+          <el-col
+            class="news-list-item information"
+            :xs="24"
+            :sm="16"
+            :md="16"
+            :lg="16"
+            :xl="16"
+          >
+            <div class="header">
+              <div class="title">
+                <h2>新闻资讯</h2>
+                <div class="line-div"></div>
+              </div>
+              <router-link class="move" to="/news">更多</router-link>
             </div>
+            <el-row :gutter="30">
+              <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12">
+                <img
+                  src="https://xibaiimg.gz.bcebos.com/hongshulinjy/5e706f7451bbe9.17343751.jpg"
+                />
+                <div class="content">
+                  <h1>职场人际交往技巧一</h1>
+                  <span>2021-10-7</span>
+                  <div class="describe">
+                    职场人际交往技巧一作为一名职场人，你的技能是否能够顺利完成领导交代的工作并不是最让人头疼的，能否处理好职场人...
+                  </div>
+                </div>
+              </el-col>
+              <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12">
+                <img
+                  src="https://xibaiimg.gz.bcebos.com/hongshulinjy/5e71e6e8e74f82.09843614.jpg"
+                />
+                <div class="content">
+                  <h1>职场人际交往技巧一</h1>
+                  <span>2021-10-7</span>
+                  <div class="describe">
+                    职场人际交往技巧一作为一名职场人，你的技能是否能够顺利完成领导交代的工作并不是最让人头疼的，能否处理好职场人...
+                  </div>
+                </div>
+              </el-col>
+            </el-row>
           </el-col>
-          <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="16">
-            <div class="dynamic">
-              <h2>行业动态</h2>
-              <div class="line-div"></div>
-              <el-row :gutter="30">
-                <el-col :xl="24">
-                  <img
-                    src="https://xibaiimg.gz.bcebos.com/hongshulinjy/5e706f7451bbe9.17343751.jpg"
-                    alt=""
-                  />
-                  <span>职场人际交往技巧一</span>
-                </el-col>
-              </el-row>
-              <router-link to="/dynamic" class="more">更多</router-link>
+          <el-col
+            class="news-list-item dynamic"
+            :xs="24"
+            :sm="8"
+            :md="8"
+            :lg="8"
+            :xl="8"
+          >
+            <div class="header">
+              <div class="title">
+                <h2>行业动态</h2>
+                <div class="line-div"></div>
+              </div>
+              <router-link class="move" to="/dynamic">更多</router-link>
             </div>
+            <el-row>
+              <el-col :span="24">
+                <img
+                  src="https://xibaiimg.gz.bcebos.com/hongshulinjy/5e71e72e2b07d6.87738941.jpg"
+                />
+                <div class="content">
+                  <h1>职场人际交往技巧一</h1>
+                  <span>2021-10-7</span>
+                  <div class="describe">
+                    职场人际交往技巧一作为一名职场人，你的技能是否能够顺利完成领导交代的工作并不是最让人头疼的，能否处理好职场人...
+                  </div>
+                </div>
+              </el-col>
+            </el-row>
           </el-col>
         </el-row>
       </div>
@@ -120,29 +151,32 @@ export default defineComponent({
   margin: 0 auto;
   flex-direction: column;
 
+  .line-div {
+    margin: 16px 0 40px 0;
+    width: 200px;
+    height: 5px;
+    background-color: #3c8ee2;
+  }
+
   .about-us {
-    max-width: var(--client-width);
+    max-width: 1200px;
+    width: calc(100% - 32px);
+
     margin: 0 auto;
-    padding: 60px 0px;
-    text-align: center;
+    padding: 60px 0px 100px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 
     h3 {
       color: #707070;
       font-size: 26px;
     }
 
-    .line-div {
-      margin: 16px 0 40px 0;
-      width: 200px;
-      height: 5px;
-      background-color: #3c8ee2;
-    }
-
     .about-us-describe {
-      width: 360px;
+      width: 100%;
       color: #707070;
       font-size: 14px;
       margin-bottom: 62px;
@@ -153,7 +187,8 @@ export default defineComponent({
       justify-content: space-around;
       align-items: center;
       flex-wrap: wrap;
-      width: var(--client-width);
+      width: 100%;
+      max-width: 100%;
 
       .about-us-item {
         width: 180px;
@@ -186,13 +221,6 @@ export default defineComponent({
     background-attachment: fixed;
     background-position: center top;
     background-repeat: no-repeat;
-
-    @media screen and (max-width: 768px) {
-      background-attachment: scroll;
-      background-position: center top;
-      background-repeat: no-repeat;
-    }
-
     color: #f2f2f2;
 
     display: flex;
@@ -202,17 +230,17 @@ export default defineComponent({
     padding: 80px 0px 70px;
 
     h2 {
-      font-size: var(--headline);
+      font-size: 28px;
       margin-bottom: 40px;
     }
 
     span {
-      font-size: var(--subtitle);
+      font-size: 18px;
     }
 
     .education-list {
-      width: var(--client-width);
-
+      width: 100%;
+      max-width: 1200px;
       margin-top: 80px;
 
       .education-item {
@@ -223,7 +251,7 @@ export default defineComponent({
         margin-bottom: 70px;
 
         h2 {
-          font-size: var(--subtitle);
+          font-size: 18px;
           margin-bottom: 6px;
         }
 
@@ -235,7 +263,7 @@ export default defineComponent({
 
         p {
           margin-top: 18px;
-          font-size: var(--text-font);
+          font-size: 14px;
           width: 130px;
           text-align: center;
         }
@@ -245,69 +273,110 @@ export default defineComponent({
 
   .news {
     max-width: 1200px;
-    width: var(--client-width);
     margin: 0 auto;
     padding: 90px 0px;
 
-    .information {
-      border-right: 1px solid #f2f2f2;
-      padding-right: 35px;
-    }
+    .header {
+      display: flex;
+      justify-content: space-between;
 
-    .el-row {
-      width: calc(100% + 32px);
+      align-items: center;
+      padding-right: 30px;
 
-      .el-col {
-        img {
-          width: 100%;
-        }
+      .move {
+        display: block;
+        border: 1px solid #7a7a7a;
+        text-align: center;
+        border-radius: 30px;
+        padding: 5px 18px;
+        margin-top: -35px;
+        cursor: pointer;
 
-        span {
-          font-size: 16px;
-          line-height: 2rem;
-        }
+        color: #7a7a7a;
       }
-    }
-
-    .h2 {
-      font-size: var(--headline);
     }
 
     .line-div {
-      margin: 16px 0 26px 0;
-      width: 200px;
-      height: 5px;
-      background-color: #3c8ee2;
+      width: 100px;
     }
 
-    .more {
-      display: block;
-      font-size: 16px;
-      float: right;
-    }
+    .news-list-box .news-list-item .el-row .el-col {
+      display: flex;
+      flex-direction: column;
+      padding: 0px 20px;
 
-    @media screen and (max-width: 768px) {
-      padding: 50px 0px;
-      .information {
-        border: none;
-        padding-right: 0;
+      img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
       }
 
-      .information .el-col, .dynamic .el-col {
-        margin-bottom: 20px;
-        background-color: #f2f2f2;
-        padding: 20px 0px;
-        img {
-          margin-bottom: 10px;
+      .content {
+        cursor: pointer;
+        padding: 16px;
+        background: #f8f8f8;
+
+        h1 {
+          line-height: 2rem;
+          font-size: 16px;
+          font-weight: 400;
+        }
+
+        span {
+          font-size: 14px;
+          color: #7a7a7a;
+        }
+
+        .describe {
+          font-size: 14px;
+          padding: 20px 0;
         }
       }
     }
+  }
 
-    @media screen and (min-width: 768px) {
-      .information {
-        border: none;
+  @media screen and (max-width: 768px) {
+    .about-us {
+      padding: 60px 20px 70px;
+    }
+
+    .education {
+      background-attachment: scroll;
+      background-position: center top;
+      background-repeat: no-repeat;
+    }
+
+    .news {
+      width: calc(100% - 32px);
+      padding-bottom: 20px;
+
+      .header {
         padding-right: 0;
       }
+
+      .news-list-box .news-list-item .el-row .el-col {
+        margin-bottom: 40px;
+      }
+
+      .dynamic .el-row .el-col {
+        padding: 0 !important;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .news {
+      width: calc(100% - 64px);
+
+      .dynamic .el-row .el-col {
+        padding: 0 !important;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .news {
+      width: calc(100% - 96px);
     }
   }
 }
