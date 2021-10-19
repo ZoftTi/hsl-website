@@ -58,9 +58,11 @@
             </div>
             <el-row :gutter="30">
               <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12">
-                <img
-                  src="https://xibaiimg.gz.bcebos.com/hongshulinjy/5e706f7451bbe9.17343751.jpg"
-                />
+                <div class="header-picture">
+                  <img
+                    src="https://xibaiimg.gz.bcebos.com/hongshulinjy/5e706f7451bbe9.17343751.jpg"
+                  />
+                </div>
                 <div class="content">
                   <h1>职场人际交往技巧一</h1>
                   <span>2021-10-7</span>
@@ -70,9 +72,11 @@
                 </div>
               </el-col>
               <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12">
-                <img
-                  src="https://xibaiimg.gz.bcebos.com/hongshulinjy/5e71e6e8e74f82.09843614.jpg"
-                />
+                <div class="header-picture">
+                  <img
+                    src="https://xibaiimg.gz.bcebos.com/hongshulinjy/5e71e6e8e74f82.09843614.jpg"
+                  />
+                </div>
                 <div class="content">
                   <h1>职场人际交往技巧一</h1>
                   <span>2021-10-7</span>
@@ -100,9 +104,11 @@
             </div>
             <el-row>
               <el-col :span="24">
-                <img
-                  src="https://xibaiimg.gz.bcebos.com/hongshulinjy/5e71e72e2b07d6.87738941.jpg"
-                />
+                <div class="header-picture">
+                  <img
+                    src="https://xibaiimg.gz.bcebos.com/hongshulinjy/5e71e72e2b07d6.87738941.jpg"
+                  />
+                </div>
                 <div class="content">
                   <h1>职场人际交往技巧一</h1>
                   <span>2021-10-7</span>
@@ -291,8 +297,14 @@ export default defineComponent({
         padding: 5px 18px;
         margin-top: -35px;
         cursor: pointer;
-
         color: #7a7a7a;
+        transition: background-color 0.2s linear, color 0.2s linear;
+
+        &:hover {
+          background-color: #3c8ee2;
+          color: white;
+          border-color: #3c8ee2;
+        }
       }
     }
 
@@ -305,10 +317,23 @@ export default defineComponent({
       flex-direction: column;
       padding: 0px 20px;
 
-      img {
+      .header-picture {
         width: 100%;
         height: 230px;
+        overflow: hidden;
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.08);
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
         object-fit: cover;
+        transition: transform 0.2s linear;
       }
 
       .content {
