@@ -43,14 +43,14 @@ export default defineComponent({
           "https://xibaiimg.gz.bcebos.com/hongshulinjy/5e7070ea2e2e22.59908897.jpg",
         name: "广州市花都区英朗培训中心",
         content: "广州市花都区英朗培训中心（简称英朗教育）是高新教育集团属下的成人教育培训机构。",
-        url: "http://www.gzhsljy.com/jiaoyupe/165/",
+        url: "/",
       },
       {
         picture:
           "https://xibaiimg.gz.bcebos.com/hongshulinjy/5e706f479f9c32.48762827.jpg",
         name: "广东省高新技术职业培训学院",
         content: "广东省高新技术职业培训学院成立于2008年，是一所培养中、高级技能人才的省属全日制省重点技工学校。学校坐落在广州北站枢纽",
-        url: "http://www.gzhsljy.com/hezuoyua/164/",
+        url: "/",
       }
     ])
     return {

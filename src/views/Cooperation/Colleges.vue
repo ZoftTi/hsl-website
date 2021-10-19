@@ -43,21 +43,21 @@ export default defineComponent({
           "https://xibaiimg.gz.bcebos.com/hongshulinjy/5e716dd0589156.96315359.jpg",
         name: "阳江职业技术学院",
         content: "阳江职业技术学院是经广东省人民政府批准设立，国家教育部备案，阳江市人民政府举......",
-        url: "http://www.gzhsljy.com/hezuoyua/170/",
+        url: "/",
       },
       {
         picture:
           "https://xibaiimg.gz.bcebos.com/hongshulinjy/5e716dcfcc0af2.17979223.jpg",
         name: "广州市实验技术学校",
         content: "广州市实验技工学校创办于1995年，是经广东省劳动和社会保障厅批办，广州市劳动......",
-        url: "http://www.gzhsljy.com/hezuoyua/169/",
+        url: "/",
       },
       {
         picture:
           "https://xibaiimg.gz.bcebos.com/hongshulinjy/5e716dcee21c04.29495312.jpg",
         name: "广东省交通运输技师学院",
         content: "广东省交通运输技师学院（以下简称学院）创办于1960 年，2001 年与广州公路工程技工......",
-        url: "http://www.gzhsljy.com/hezuoyua/168/",
+        url: "/",
       },
     ])
     return {

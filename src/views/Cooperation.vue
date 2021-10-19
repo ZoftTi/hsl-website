@@ -95,19 +95,19 @@ export default defineComponent({
         picture:
           "https://xibaiimg.gz.bcebos.com/hongshulinjy/5e716dd0589156.96315359.jpg",
         name: "阳江职业技术学院",
-        url: "http://www.gzhsljy.com/hezuoyua/170/",
+        url: "/",
       },
       {
         picture:
           "https://xibaiimg.gz.bcebos.com/hongshulinjy/5e716dcfcc0af2.17979223.jpg",
         name: "广州市实验技术学校",
-        url: "http://www.gzhsljy.com/hezuoyua/169/",
+        url: "/",
       },
       {
         picture:
           "https://xibaiimg.gz.bcebos.com/hongshulinjy/5e716dcee21c04.29495312.jpg",
         name: "广东省交通运输技师学院",
-        url: "http://www.gzhsljy.com/hezuoyua/168/",
+        url: "/",
       },
     ])
     const training = reactive([
@@ -115,13 +115,13 @@ export default defineComponent({
         picture:
           "https://xibaiimg.gz.bcebos.com/hongshulinjy/5e7070ea2e2e22.59908897.jpg",
         name: "广州市花都区英朗培训中心",
-        url: "http://www.gzhsljy.com/jiaoyupe/165/",
+        url: "/",
       },
       {
         picture:
           "https://xibaiimg.gz.bcebos.com/hongshulinjy/5e706f479f9c32.48762827.jpg",
         name: "广东省高新技术职业培训学院",
-        url: "http://www.gzhsljy.com/jiaoyupe/164/",
+        url: "/",
       },
     ])
     return {
