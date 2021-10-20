@@ -86,7 +86,8 @@
 </template>
 
 <script>
-import { defineComponent, reactive } from "vue"
+import { defineComponent, inject, reactive } from "vue"
+import headerPicture from '@/assets/images/headerPicture/1569464033.jpg'
 export default defineComponent({
   name: "App",
   setup() {
@@ -124,6 +125,9 @@ export default defineComponent({
         url: "/",
       },
     ])
+
+    inject('setCarouselAttribute')(false, headerPicture)
+
     return {
       institutions,
       training,

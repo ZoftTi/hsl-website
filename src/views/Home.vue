@@ -126,7 +126,7 @@
 </template>
 
 <script>
-import { defineComponent, reactive } from "vue"
+import { defineComponent, inject, reactive } from "vue"
 export default defineComponent({
   name: "App",
   components: {},
@@ -144,6 +144,9 @@ export default defineComponent({
       { title: "天使投资", content: "为有想法有创意校友联合企业定点投资" },
       { title: "增值服务", content: "学历提升技能提升各种类型平台服务" },
     ])
+
+    inject("setCarouselAttribute")(true)
+
     return {
       aboutData,
       educationData,

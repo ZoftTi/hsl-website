@@ -26,7 +26,7 @@
 import NavBar from "@/components/common/NavBar.vue"
 import Footer from "@/components/common/Footer.vue"
 import Carousel from "@/components/common/Carousel.vue"
-import { provide, inject, defineComponent, ref } from "vue"
+import { provide, inject, defineComponent, reactive } from "vue"
 export default defineComponent({
   name: "App",
   components: {
@@ -35,12 +35,19 @@ export default defineComponent({
     Footer,
   },
   setup() {
-    const carouselShow = ref(true)
-    const toggleCarouselShow = () => {
-      carouselShow.value = !carouselShow.value
+    const carouselAttribute = reactive({
+      isShow: true,
+      height: "520px",
+      picUrl: ''
+    })
+
+    const setCarouselAttribute = (isShow = true, picUrl = '', height = "520px") => {
+      carouselAttribute.isShow = isShow
+      carouselAttribute.picUrl = picUrl
+      carouselAttribute.height = height
     }
-    provide("carouselShow", carouselShow)
-    provide("toggleCarouselShow", toggleCarouselShow)
+    provide("carouselAttribute", carouselAttribute)
+    provide("setCarouselAttribute", setCarouselAttribute)
 
     return {}
   },

@@ -174,10 +174,10 @@ import { defineComponent, inject, onBeforeUnmount } from "vue"
 export default defineComponent({
   name: "App",
   setup() {
-    inject("toggleCarouselShow")()
+    inject("setCarouselAttribute")(false)
 
     onBeforeUnmount(() => {
-      inject("toggleCarouselShow")()
+      inject("setCarouselAttribute")(true)
     })
 
     return {}

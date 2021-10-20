@@ -1,10 +1,14 @@
 <template>
-  <div class="carousel-wrap" v-if="carouselShow">
-    <el-carousel trigger="click" height="550px">
+  <div class="carousel-wrap" v-if="carouselAttribute.isShow">
+    <el-carousel trigger="click" :height="carouselAttribute.height">
       <el-carousel-item v-for="item in images" :key="item">
         <img :src="item" alt="" />
       </el-carousel-item>
     </el-carousel>
+  </div>
+  <div class="carousel-wrap header-picture" v-if="carouselAttribute.picUrl">
+      <img :src="carouselAttribute.picUrl" alt=""
+      />
   </div>
 </template>
 
@@ -17,23 +21,29 @@ import bannerImgThree from "@/assets/images/banner/banner3.png"
 export default defineComponent({
   name: "App",
   setup() {
-    const images = reactive([
-      bannerImg,
-      bannerImgTwo,
-      bannerImgThree,
-    ])
+    const images = reactive([bannerImg, bannerImgTwo, bannerImgThree])
 
-    const carouselShow = inject("carouselShow")
+    const carouselAttribute = inject("carouselAttribute")
 
     return {
       images,
-      carouselShow,
+      carouselAttribute,
     }
   },
 })
 </script>
 
 <style lang="less">
+.header-picture {
+  height: 162px;
+  max-height: 162px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
 .carousel-wrap {
   margin-top: 60px;
   .el-carousel__item {

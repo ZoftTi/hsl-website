@@ -106,7 +106,8 @@
           :lg="{ span: 12, offset: 1 }"
           :xl="{ span: 12, offset: 1 }"
         >
-          <img src="@/assets/images/map.png" alt="" />
+          <!-- <img src="@/assets/images/map.png" alt="" /> -->
+          <div id="mapContainer" style="width: 100%;height: 100%"></div>
         </el-col>
       </el-row>
     </div>
@@ -114,10 +115,21 @@
 </template>
 
 <script>
-import { defineComponent } from "vue"
+import { defineComponent, inject, onMounted } from "vue"
 export default defineComponent({
   name: "App",
   setup() {
+    onMounted(() => {
+      var map = new BMap.Map("mapContainer")
+      var point = new BMap.Point(113.30456,23.462931)
+      map.centerAndZoom(point, 15)
+      var marker = new BMap.Marker(point)
+      map.addOverlay(marker);       
+      map.addControl(new BMap.NavigationControl());
+      map.enableScrollWheelZoom(true)
+    })
+
+    inject('setCarouselAttribute')(false, 'http://zly_20201210_09.demo.mxyhn.xyz/ECMS_DGSJ/images/1569489442.jpg')
     return {}
   },
 })
@@ -174,6 +186,12 @@ export default defineComponent({
     p {
       line-height: 2.5rem;
     }
+
+    #mapContainer {
+      width: 100%;
+      height: 100%;
+      min-height: 400px;
+    }    
   }
 
   @media screen and (max-width: 768px) {

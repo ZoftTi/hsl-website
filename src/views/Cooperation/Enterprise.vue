@@ -16,13 +16,7 @@
         >
           <img :src="item.picture" />
         </el-col>
-        <el-col
-          :xs="24"
-          :sm="14"
-          :md="{ span: 12, offset: 1 }"
-          :lg="{ span: 12, offset: 1 }"
-          :xl="{ span: 12, offset: 1 }"
-        >
+        <el-col :xs="24" :sm="14" :md="12" :lg="12" :xl="12">
           <h4>{{ item.name }}</h4>
           <div class="line-div"></div>
           <p>{{ item.content }}</p>
@@ -33,7 +27,8 @@
 </template>
 
 <script>
-import { defineComponent, reactive } from "vue"
+import { defineComponent, inject, reactive } from "vue"
+import headerPicture from '@/assets/images/headerPicture/1569464033.jpg'
 export default defineComponent({
   name: "enterprise",
   setup() {
@@ -42,17 +37,23 @@ export default defineComponent({
         picture:
           "https://xibaiimg.gz.bcebos.com/hongshulinjy/5e7070ea2e2e22.59908897.jpg",
         name: "广州市花都区英朗培训中心",
-        content: "广州市花都区英朗培训中心（简称英朗教育）是高新教育集团属下的成人教育培训机构。",
+        content:
+          "广州市花都区英朗培训中心（简称英朗教育）是高新教育集团属下的成人教育培训机构。作为一所智慧型社会教育服务机构，英朗教育秉承“厚德博学、求实创新”的办学宗旨，专注为社会继续学习提供创新服务。英朗教育（原广州市花都区集博教育培训中心）成立于2005年4月，以坚定的办学理念，开创了学历教育与职业技能教育相结合的教学模式，构建了校企事业单位合作的办学思路，走出一条以“社会实用性为导向”的独具英朗特色的办学之路。",
         url: "/",
       },
       {
         picture:
           "https://xibaiimg.gz.bcebos.com/hongshulinjy/5e706f479f9c32.48762827.jpg",
         name: "广东省高新技术职业培训学院",
-        content: "广东省高新技术职业培训学院成立于2008年，是一所培养中、高级技能人才的省属全日制省重点技工学校。学校坐落在广州北站枢纽",
+        content:
+          "广东省高新技术职业培训学院成立于2008年，是一所培养中、高级技能人才的省属全日制省重点技工学校。学校坐落在广州北站枢纽，广州新机场经济圈内，毗邻花都空港经济区、广州万达文化旅游城、花都汽车城、花都珠宝城、狮岭国际皮具城等大型工、商业园区，交通便利，环境优越，企业云集，可为学子提供良好的实习就业平台。",
         url: "/",
-      }
+      },
     ])
+    
+    inject('setCarouselAttribute')(false, headerPicture)
+
+    
     return {
       enterprise,
     }
@@ -99,22 +100,29 @@ export default defineComponent({
       }
 
       .el-col:nth-child(2) {
-        padding: 20px 24px;
+        padding: 32px 24px 32px 40px;
         display: flex;
         flex-direction: column;
-        align-items: center;
 
         h4 {
-          margin-bottom: 30px;
+          margin-bottom: 24px;
         }
 
         .line-div {
           width: 56px;
           height: 5px;
-          background-color: #3C8EE2;
-          margin: 0px 0px 32px 0px;
+          background-color: #3c8ee2;
+          margin: 0px 0px 24px 0px;
         }
 
+        p {
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+        }
       }
     }
   }
