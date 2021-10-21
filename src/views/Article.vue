@@ -8,7 +8,7 @@
         <span>2021-05-10 - 广州红树林教育科技有限公司</span>
         <div class="line-div"></div>
         <div class="content">
-          <img src="@/assets/images/news-detail-frist.png" alt="" />
+          <img src="@/assets/images/news-detail-frist.png" alt />
           <p>
             为了提高学生的求职技能，为将来的职业规划打好基础，于5月7日晚上，在广东省高新技术高级技工学校图书馆多媒体会议室举办了聘歌·校园就业大使专题培训，本次培训邀请到大学生就业辅导专家、资深人力资源管理师——杨奎仁老师为同学们分享“大中专院校应届毕业生求职攻略”，广东省高新技术高级技工学校100多名校园就业大使参加了本次专题培训。
           </p>
@@ -57,7 +57,10 @@
 
           <p>劳动保障与就业维权</p>
 
-          <img src="@/assets/images/news-detail-fifth.png" alt="" />
+          <img
+            src="@/assets/images/news-detail-fifth.png"
+            alt=""
+          />
 
           <p>
             关于劳动保障权益，杨老师讲解到，我们应该做到“应知应会”，他着重给同学们普及了七点基础的劳动法律知识。提高同学们的劳动保护意识，增强自我保护意识。
@@ -180,7 +183,9 @@ export default defineComponent({
       inject("setCarouselAttribute")(true)
     })
 
-    return {}
+
+
+    return { }
   },
 })
 </script>

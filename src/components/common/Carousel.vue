@@ -1,19 +1,18 @@
 <template>
   <div class="carousel-wrap" v-if="carouselAttribute.isShow">
-    <el-carousel trigger="click" :height="carouselAttribute.height">
+    <el-carousel trigger="click" :height="carouselHeight + 'px'">
       <el-carousel-item v-for="item in images" :key="item">
         <img :src="item" alt="" />
       </el-carousel-item>
     </el-carousel>
   </div>
   <div class="carousel-wrap header-picture" v-if="carouselAttribute.picUrl">
-      <img :src="carouselAttribute.picUrl" alt=""
-      />
+    <img :src="carouselAttribute.picUrl" alt="" />
   </div>
 </template>
 
 <script>
-import { defineComponent, inject, reactive } from "vue"
+import { defineComponent, inject, onMounted, reactive, ref } from "vue"
 import { useRoute, useRouter, RouteLocationRaw } from "vue-router"
 import bannerImg from "@/assets/images/banner/banner1.png"
 import bannerImgTwo from "@/assets/images/banner/banner2.png"
@@ -23,10 +22,13 @@ export default defineComponent({
   setup() {
     const images = reactive([bannerImg, bannerImgTwo, bannerImgThree])
 
+    const carouselHeight = ref(520)
+
     const carouselAttribute = inject("carouselAttribute")
 
     return {
       images,
+      carouselHeight,
       carouselAttribute,
     }
   },

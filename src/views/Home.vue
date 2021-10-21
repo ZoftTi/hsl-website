@@ -15,8 +15,9 @@
             :key="index"
           >
             <h4>{{ item.title }}</h4>
-            <h2>{{ item.data }}</h2>
-            <h4>{{ item.unit }}</h4>
+            <!-- <h2>{{ item.data }}</h2> -->
+            <NumberGrow class="about-us-data" :time="2" :value="item.data" />
+            <p>{{ item.unit }}</p>
           </div>
         </div>
       </div>
@@ -127,9 +128,10 @@
 
 <script>
 import { defineComponent, inject, reactive } from "vue"
+import NumberGrow from "@/components/common/NumberGrow.vue"
 export default defineComponent({
   name: "App",
-  components: {},
+  components: { NumberGrow },
   setup() {
     const aboutData = reactive([
       { title: "合作职业院校", data: 10, unit: "余所" },
@@ -206,19 +208,25 @@ export default defineComponent({
         display: flex;
         flex-direction: column;
         justify-content: center;
+        font-family: "Microsoft JhengHei";
 
         margin-top: 25px;
 
         border-radius: 50%;
 
         h4 {
-          font-size: 16px;
+          font-size: 18px;
           line-height: 2rem;
         }
 
-        h2 {
-          font-size: 26px;
+        .about-us-data {
+          font-size: 34px;
+          line-height: 3rem;
           color: #3764e7;
+        }
+
+        p {
+          line-height: 1.5rem;
         }
       }
     }

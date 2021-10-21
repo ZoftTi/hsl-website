@@ -4,7 +4,7 @@
     <div>
       <a href="javascript:;" @click="$router.go(-1)">上一页</a>
       <router-link to="/home">回到首页</router-link>
-      </div>
+    </div>
   </div>
 </template>
 
@@ -13,11 +13,12 @@ import { defineComponent, onBeforeUnmount, inject } from "vue"
 export default defineComponent({
   name: "App",
   setup() {
-    inject("toggleCarouselShow")()
+    inject("setCarouselAttribute")(false)
 
     onBeforeUnmount(() => {
-      inject("toggleCarouselShow")()
+      inject("setCarouselAttribute")(true)
     })
+
 
     return {}
   },
@@ -43,7 +44,7 @@ export default defineComponent({
     margin-top: 20px;
     justify-content: space-around;
     align-items: center;
-    
+
     a {
       padding: 0 10px;
 
