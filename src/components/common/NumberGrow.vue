@@ -10,7 +10,7 @@
   </div>
 </template>
 <script>
-import { defineComponent, onMounted, getCurrentInstance } from "vue"
+import { defineComponent, onMounted, ref } from "vue"
 export default defineComponent({
   props: {
     time: {
@@ -23,10 +23,13 @@ export default defineComponent({
     },
   },
   setup(props) {
+    const numberGrow = ref(null)
+
     onMounted(() => {
-      numberGrow(getCurrentInstance().ctx.$refs.numberGrow)
+      numberGrowFun(numberGrow.value)
     })
-    const numberGrow = (ele) => {
+
+    const numberGrowFun = (ele) => {
       const step = (props.value * 10) / (props.time * 1000)
       let current = 0
       let start = 0
