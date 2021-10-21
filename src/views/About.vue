@@ -121,15 +121,18 @@ export default defineComponent({
   setup() {
     onMounted(() => {
       var map = new BMap.Map("mapContainer")
-      var point = new BMap.Point(113.30456,23.462931)
+      var point = new BMap.Point(113.30456, 23.462931)
       map.centerAndZoom(point, 15)
       var marker = new BMap.Marker(point)
-      map.addOverlay(marker);       
-      map.addControl(new BMap.NavigationControl());
+      map.addOverlay(marker)
+      map.addControl(new BMap.NavigationControl())
       map.enableScrollWheelZoom(true)
     })
 
-    inject('setCarouselAttribute')(false, 'http://zly_20201210_09.demo.mxyhn.xyz/ECMS_DGSJ/images/1569489442.jpg')
+    inject("setCarouselAttribute")(
+      false,
+      "http://zly_20201210_09.demo.mxyhn.xyz/ECMS_DGSJ/images/1569489442.jpg"
+    )
     return {}
   },
 })
@@ -191,7 +194,7 @@ export default defineComponent({
       width: 100%;
       height: 100%;
       min-height: 400px;
-    }    
+    }
   }
 
   @media screen and (max-width: 768px) {
