@@ -116,6 +116,7 @@
 
 <script>
 import { defineComponent, inject, onMounted } from "vue"
+import headerPicture from "@/assets/images/headerPicture/1569489442.jpg"
 export default defineComponent({
   name: "App",
   setup() {
@@ -129,10 +130,7 @@ export default defineComponent({
       map.enableScrollWheelZoom(true)
     })
 
-    inject("setCarouselAttribute")(
-      false,
-      "http://zly_20201210_09.demo.mxyhn.xyz/ECMS_DGSJ/images/1569489442.jpg"
-    )
+    inject("setCarouselAttribute")(false, headerPicture)
     return {}
   },
 })
