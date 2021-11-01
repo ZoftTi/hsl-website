@@ -182,9 +182,6 @@ export default defineComponent({
     onBeforeUnmount(() => {
       inject("setCarouselAttribute")(true)
     })
-
-
-
     return { }
   },
 })

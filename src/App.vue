@@ -37,12 +37,10 @@ export default defineComponent({
   setup() {
     const carouselAttribute = reactive({
       isShow: true,
-      picUrl: ''
     })
 
-    const setCarouselAttribute = (isShow = true, picUrl = '') => {
+    const setCarouselAttribute = (isShow = true) => {
       carouselAttribute.isShow = isShow
-      carouselAttribute.picUrl = picUrl
     }
     provide("carouselAttribute", carouselAttribute)
     provide("setCarouselAttribute", setCarouselAttribute)

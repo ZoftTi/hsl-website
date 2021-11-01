@@ -28,7 +28,6 @@
 
 <script>
 import { defineComponent, inject, reactive } from "vue"
-import headerPicture from '@/assets/images/headerPicture/1569464033.jpg'
 export default defineComponent({
   name: "enterprise",
   setup() {
@@ -50,10 +49,7 @@ export default defineComponent({
         url: "/",
       },
     ])
-    
-    inject('setCarouselAttribute')(false, headerPicture)
 
-    
     return {
       enterprise,
     }

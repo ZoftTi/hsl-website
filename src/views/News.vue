@@ -40,7 +40,6 @@
 
 <script>
 import { defineComponent, inject, reactive } from "vue"
-import headerPicture from '@/assets/images/headerPicture/1569466857.jpg'
 export default defineComponent({
   name: "App",
   setup() {
@@ -68,8 +67,6 @@ export default defineComponent({
         time: "2020-09-21",
       },
     ])
-
-    inject("setCarouselAttribute")(false, headerPicture)
 
     return {
       news,

@@ -79,11 +79,9 @@
 
 <script>
 import { defineComponent, inject } from "vue"
-import headerPicture from '@/assets/images/headerPicture/child-gc83b684d8_1920.jpg'
 export default defineComponent({
   name: "App",
   setup() {
-    inject("setCarouselAttribute")(false, headerPicture)
     return {}
   },
 })
